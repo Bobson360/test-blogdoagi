@@ -7,18 +7,15 @@ import pageobjects.pages.InitialPage;
 
 public class MobileStep {
 	InitialPage initPage = new InitialPage();
-	
-	 @Dado("que esteja na tela inicial")
-	 public void dado_que_esteja_na_tela_inicial() {
-		 
-	 }
-	    @E("clique na lupa depesquida no canto superior esquerdo")
-	    public void e_clique_na_lupa_depesquida_no_canto_superior_esquerdo() {
-	    	
-	    }
-	    
-	    @Entao("devo validar a exibicao do formulario mobile")
-	    public void entao_devo_validar_a_exibicao_do_formulario() {
-	    	
-	    }
+
+	@Dado("que eu expanda o menu sandwich")
+	public void dado_que_eu_expanda_o_menu_sandwich() {
+		initPage.openSandwich();
+	}
+
+	@E("pesquise no campo de de busca por \"([^\"]*)\"$")
+	public void e_clique_na_lupa_depesquida_no_canto_superior_esquerdo(String value) {
+		initPage.mobileSearch(value);
+	}
+
 }

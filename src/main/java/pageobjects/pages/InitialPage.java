@@ -2,8 +2,10 @@ package pageobjects.pages;
 
 import static org.junit.Assert.assertTrue;
 
+import static utils.Ultils.isMac;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -51,5 +53,14 @@ public class InitialPage extends PageBase {
 
 	public void searchFielValueValidation(String value) {
 		assertTrue(null, false);
+	}
+
+	public void openSandwich() {
+		driver.findElement(By.id("overlay-open")).click();
+	}
+
+	public void mobileSearch(String value) {
+		driver.findElement(By.xpath("//div[@class = 'mobile-search']//input[@class = 'search-field']"))
+		.sendKeys(value + (isMac() ? Keys.RETURN: Keys.ENTER));
 	}
 }

@@ -14,8 +14,6 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import junit.framework.TestCase;
 
-
-
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "resources/features", glue = "pageobjects/steps", tags = {"@test"})
 public class TestDesktopSize extends TestCase{
