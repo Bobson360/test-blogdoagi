@@ -31,44 +31,25 @@ Funcionalidade: Validar Pesquisa por lupa Dimencao navegador computador
     E precionar a tecla enter
     Entao devo validar a tela de resultados
 
-	@NoResults @Web
+  @NoResults @Web
   Cenario: Nenhum resultado encontrado
     Dado clique na lupa de pesquida no canto superior esquerdo
-		E digitar no campo de pesquisa o texto "ddxf"
-		E clicar no botao pesquisar
-		Entao validar a tela de nenhum resultado encontrado
-		
-	@FieldSearchNoResults @Web
+    E digitar no campo de pesquisa o texto "ddxf"
+    E clicar no botao pesquisar
+    Entao validar a tela de nenhum resultado encontrado
+
+  @FieldSearchNoResults @Web
   Cenario: Campo de pesquisa nenhum resultado encontrado
     Dado clique na lupa de pesquida no canto superior esquerdo
-		E digitar no campo de pesquisa o texto "ddxf"
-		E clicar no botao pesquisar
-		Entao o campo de pesquisa com o mesmo texto buscado
-		
-			@FieldSearchNoResultsReflect @Web
+    E digitar no campo de pesquisa o texto "ddxf"
+    E clicar no botao pesquisar
+    Entao o campo de pesquisa com o mesmo texto buscado
+
+  @FieldSearchNoResultsReflect @Web
   Cenario: Pesquisa nenhum resultado encontrado reflete no value da pesquisa da lupa
     Dado clique na lupa de pesquida no canto superior esquerdo
-		E digitar no campo de pesquisa o texto "ddxf"
-		E clicar no botao pesquisar
-		E pesquisar pelo campo de pesquisa da tela sem resultados o texto "ghtdk"
-		Quando clique na lupa de pesquida no canto superior esquerdo
-		Entao o valor na caixa de pesquisa deve ser covespondente a "ghtdk"
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+    E digitar no campo de pesquisa o texto "ddxf"
+    E clicar no botao pesquisar
+    E pesquisar pelo campo de pesquisa da tela sem resultados o texto "ghtdk"
+    Quando clique na lupa de pesquida no canto superior esquerdo
+    Entao o valor na caixa de pesquisa deve ser covespondente a "ghtdk"

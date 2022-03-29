@@ -45,4 +45,8 @@ public class InitialPage extends PageBase {
 	public void pressEnter() {
 		assertTrue(null, false);
 	}
+
+	public void searchFielValueValidation(String value) {
+		assertTrue(null, false);
+	}
 }

@@ -16,7 +16,7 @@ import junit.framework.TestCase;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "resources/features", glue = "pageobjects/steps", tags = {"@test"})
+@CucumberOptions(features = "resources/features", glue = "pageobjects/steps", tags = {"@Web, @test"})
 public class TestDesktopSize extends TestCase{
 	
 	public static WebDriver driver;

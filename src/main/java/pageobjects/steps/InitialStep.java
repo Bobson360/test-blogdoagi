@@ -60,16 +60,16 @@ public class InitialStep {
 
 	@Entao("o campo de pesquisa com o mesmo texto buscado")
 	public void entao_o_campo_de_pesquisa_com_o_mesmo_texto_buscado() {
-
+		noResultsPage.valueValidationSearchField();
 	}
 
 	@E("^pesquisar pelo campo de pesquisa da tela sem resultados o texto \"([^\"]*)\"$")
 	public void e_pesquisar_pelo_campo_de_pesquisa_da_tela_sem_resultados_o_texto(String value) {
-
+		noResultsPage.searchWithfield(value);
 	}
 
 	@Entao("^o valor na caixa de pesquisa deve ser covespondente a \"([^\"]*)\"$")
 	public void entao_o_valor_na_caixa_de_pesquisa_deve_ser_covespondente_a(String value) {
-
+		initPage.searchFielValueValidation(value);
 	}
 }

@@ -10,4 +10,12 @@ public class NoResultsPage extends PageBase{
 		assertTrue(null, false);
 	}
 
+	public void valueValidationSearchField() {
+		assertTrue(null, false);
+	}
+
+	public void searchWithfield(String value) {
+		assertTrue(null, false);
+	}
+
 }
