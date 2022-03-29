@@ -13,7 +13,7 @@ import config.PageBase;
 public class InitialPage extends PageBase {
 
 	public WebElement btnSearch = driver.findElement(By.xpath("//button[@id = 'search-open']"));
-	private WebElement searchField;
+	private WebElement searchField = driver.findElement(By.xpath("//div[@class = 'desktop-search']//input[@name = 's']"));
 
 	public void validaCampoPasquisaAberto() {
 		searchField = (new WebDriverWait(driver, 2)).until(ExpectedConditions
@@ -31,7 +31,10 @@ public class InitialPage extends PageBase {
 	}
 
 	public void validaPlaceHolder() {
-		assertTrue(null, false);
+		searchField.clear();
+		String value = searchField.getAttribute("placeholder");
+		assertTrue("Não foi possivel validar o placeholder: Valor esperado: Pesquisar. Valor encontrado: " + value, 
+				value.equals("Pesquisar …"));
 	}
 
 	public void writeText() {

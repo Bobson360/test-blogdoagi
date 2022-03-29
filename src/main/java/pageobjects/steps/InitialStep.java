@@ -29,7 +29,7 @@ public class InitialStep {
 	}
 
 	@Entao("devo validar o placeholder do form de pesquisa")
-	public void entao_devo_validar_o_placeholder_do_form_de_pesquisa() {
+	public void entao_devo_validar_o_placeholder_do_form_de_pesquisa()  {
 		initPage.validaPlaceHolder();
 	}
 
