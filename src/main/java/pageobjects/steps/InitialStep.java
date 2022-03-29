@@ -15,7 +15,7 @@ public class InitialStep {
 	
 	@Dado("clique na lupa de pesquida no canto superior esquerdo")
 	public void dado_clique_na_lupa_de_pesquida_no_canto_superior_esquerdo() throws InterruptedException {
-		initPage.btnSearch.click();
+		initPage.btnOpenSearch.click();
 	}
 
 	@Entao("devo validar a exibicao do formulario")
@@ -35,7 +35,7 @@ public class InitialStep {
 
 	@E("^digitar no campo de pesquisa o texto \"([^\"]*)\"$")
 	public void e_eigitar_no_campo_de_pesquisa_o_texto(String value) {
-		initPage.writeText();
+		initPage.writeText(value);
 	}
 
 	@E("precionar a tecla enter")
@@ -50,6 +50,11 @@ public class InitialStep {
 
 	@Entao("devo validar a tela de resultados")
 	public void entao_devo_validar_a_tela_de_resultados() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		resultsPage.pageValidation();
 	}
 

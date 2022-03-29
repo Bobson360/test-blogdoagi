@@ -2,32 +2,32 @@
 # encoding: utf-8
 Funcionalidade: Validar Pesquisa por lupa Dimencao navegador computador
 
-  @AbrirFormPesquisa @Web @test
+  @AbrirFormPesquisa @Web
   Cenario: Abrir form pesquisa
     Dado clique na lupa de pesquida no canto superior esquerdo
     Entao devo validar a exibicao do formulario
 
-  @FecharFormPesquisa @Web @test
+  @FecharFormPesquisa @Web
   Cenario: Fechar form pesquisa
     Dado clique na lupa de pesquida no canto superior esquerdo
     Entao devo validar o fechamento do formulario
 
-  @placeholder @Web @test
+  @placeholder @Web
   Cenario: Validar placeholder
     Dado clique na lupa de pesquida no canto superior esquerdo
     Entao devo validar o placeholder do form de pesquisa
 
-  @BtnPesquisar @Web
+  @BtnPesquisar @Web @test
   Cenario: Pesquisar pelo btn pesquisar
     Dado clique na lupa de pesquida no canto superior esquerdo
-    E digitar no campo de pesquisa o texto "Hello"
+    E digitar no campo de pesquisa o texto "black"
     E clicar no botao pesquisar
     Entao devo validar a tela de resultados
 
-  @PressEnter @Web
+  @PressEnter @Web @test
   Cenario: Pesquisar precionando enter
     Dado clique na lupa de pesquida no canto superior esquerdo
-    E digitar no campo de pesquisa o texto "Hello"
+    E digitar no campo de pesquisa o texto "black"
     E precionar a tecla enter
     Entao devo validar a tela de resultados
 

@@ -14,7 +14,8 @@ import config.PageBase;
 
 public class InitialPage extends PageBase {
 
-	public WebElement btnSearch = driver.findElement(By.xpath("//button[@id = 'search-open']"));
+	public WebElement btnOpenSearch = driver.findElement(By.xpath("//button[@id = 'search-open']"));
+	public WebElement btnSearch = driver.findElement(By.xpath("//div[@class = 'desktop-search']//input[@type = 'submit']"));
 	private WebElement searchField = driver.findElement(By.xpath("//div[@class = 'desktop-search']//input[@name = 's']"));
 
 	public void validaCampoPasquisaAberto() {
@@ -39,16 +40,17 @@ public class InitialPage extends PageBase {
 				value.contains("Pesquisar"));
 	}
 
-	public void writeText() {
-		assertTrue(null, false);
+	public void writeText(String value) {
+		searchField.clear();
+		searchField.sendKeys(value);
 	}
 
 	public void bntSearchClick() {
-		assertTrue(null, false);
+		btnSearch.click();
 	}
 
 	public void pressEnter() {
-		assertTrue(null, false);
+		searchField.sendKeys(isMac() ? Keys.RETURN: Keys.ENTER);
 	}
 
 	public void searchFielValueValidation(String value) {
