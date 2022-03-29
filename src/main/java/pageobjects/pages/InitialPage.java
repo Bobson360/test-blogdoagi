@@ -18,7 +18,7 @@ public class InitialPage extends PageBase {
 	public void validaCampoPasquisaAberto() {
 		searchField = (new WebDriverWait(driver, 2)).until(ExpectedConditions
 				.presenceOfElementLocated(By.xpath("//div[@class = 'desktop-search']//input[@name = 's']")));
-		Assert.assertTrue("Não foi possivel validar a exibição do campo de pesquisa", searchField.isDisplayed());
+		Assert.assertTrue("Nao foi possivel validar a exibicao do campo de pesquisa", searchField.isDisplayed());
 	}
 
 	public void validaCampoPasquisaFechado() throws InterruptedException {
@@ -26,15 +26,15 @@ public class InitialPage extends PageBase {
 		Thread.sleep(1000);
 		searchField = wait.until(ExpectedConditions
 				.presenceOfElementLocated(By.xpath("//div[@class = 'desktop-search']//input[@name = 's']")));
-		Assert.assertFalse("Não foi possivel validar a exibição do campo de pesquisa", searchField.isDisplayed());
+		Assert.assertFalse("Nao foi possivel validar a exibicao do campo de pesquisa", searchField.isDisplayed());
 
 	}
 
 	public void validaPlaceHolder() {
 		searchField.clear();
 		String value = searchField.getAttribute("placeholder");
-		assertTrue("Não foi possivel validar o placeholder: Valor esperado: Pesquisar. Valor encontrado: " + value, 
-				value.equals("Pesquisar …"));
+		assertTrue("Nao foi possivel validar o placeholder: Valor esperado: Pesquisar. Valor encontrado: " + value, 
+				value.contains("Pesquisar"));
 	}
 
 	public void writeText() {

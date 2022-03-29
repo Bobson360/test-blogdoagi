@@ -1,6 +1,7 @@
 package test;
 
 import java.util.concurrent.TimeUnit;
+import static utils.Ultils.isUnix;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -23,7 +24,9 @@ public class TestDesktopSize extends TestCase{
 	
 	@BeforeClass
 	public static void before () {
-		System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", isUnix() ? 
+				"/Users/"+System.getProperty("user.name")+"/projects/driver/chromedriver": 
+				"C:\\driver\\chromedriver.exe");
 		
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

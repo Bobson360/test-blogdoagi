@@ -19,7 +19,7 @@ public class InitialStep {
 	}
 
 	@Entao("devo validar a exibicao do formulario")
-	public void entao_devo_validar_a_exibição_do_formulario() throws InterruptedException {
+	public void entao_devo_validar_a_exibicao_do_formulario() throws InterruptedException {
 		initPage.validaCampoPasquisaAberto();
 	}
 
