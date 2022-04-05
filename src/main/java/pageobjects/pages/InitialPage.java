@@ -14,7 +14,6 @@ import config.PageBase;
 
 public class InitialPage extends PageBase {
 
-	public WebElement btnOpenSearch = driver.findElement(By.xpath("//button[@id = 'search-open']"));
 	public WebElement btnSearch = driver.findElement(By.xpath("//div[@class = 'desktop-search']//input[@type = 'submit']"));
 	private WebElement searchField = driver.findElement(By.xpath("//div[@class = 'desktop-search']//input[@name = 's']"));
 
@@ -54,7 +53,9 @@ public class InitialPage extends PageBase {
 	}
 
 	public void searchFielValueValidation(String value) {
-		assertTrue(null, false);
+		String text = searchField.getAttribute("value");
+		assertTrue("Nao foi possivel validar o valor da pesquisa: "
+				+ "Valor esperado: [" + value + ", Valor encontrado: " + text + "]", text.equals(value));
 	}
 
 	public void openSandwich() {
@@ -64,5 +65,13 @@ public class InitialPage extends PageBase {
 	public void mobileSearch(String value) {
 		driver.findElement(By.xpath("//div[@class = 'mobile-search']//input[@class = 'search-field']"))
 		.sendKeys(value + (isMac() ? Keys.RETURN: Keys.ENTER));
+	}
+	
+	public void btnOpenSearch() {
+		
+	}
+
+	public void btnToagleSearch() {
+		driver.findElement(By.xpath("//button[@id = 'search-open']")).click();
 	}
 }

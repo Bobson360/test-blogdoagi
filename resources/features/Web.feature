@@ -17,14 +17,14 @@ Funcionalidade: Validar Pesquisa por lupa Dimencao navegador computador
     Dado clique na lupa de pesquida no canto superior esquerdo
     Entao devo validar o placeholder do form de pesquisa
 
-  @BtnPesquisar @Web @test
+  @BtnPesquisar @Web
   Cenario: Pesquisar pelo btn pesquisar
     Dado clique na lupa de pesquida no canto superior esquerdo
     E digitar no campo de pesquisa o texto "black"
     E clicar no botao pesquisar
     Entao devo validar a tela de resultados
 
-  @PressEnter @Web @test
+  @PressEnter @Web
   Cenario: Pesquisar precionando enter
     Dado clique na lupa de pesquida no canto superior esquerdo
     E digitar no campo de pesquisa o texto "black"
@@ -38,14 +38,14 @@ Funcionalidade: Validar Pesquisa por lupa Dimencao navegador computador
     E clicar no botao pesquisar
     Entao validar a tela de nenhum resultado encontrado
 
-  @FieldSearchNoResults @Web
+  @FieldSearchNoResults @Web 
   Cenario: Campo de pesquisa nenhum resultado encontrado
     Dado clique na lupa de pesquida no canto superior esquerdo
     E digitar no campo de pesquisa o texto "ddxf"
     E clicar no botao pesquisar
-    Entao o campo de pesquisa com o mesmo texto buscado
+    Entao o campo de pesquisa com o mesmo texto buscado "ddxf"
 
-  @FieldSearchNoResultsReflect @Web
+  @FieldSearchNoResultsReflect @Web @test
   Cenario: Pesquisa nenhum resultado encontrado reflete no value da pesquisa da lupa
     Dado clique na lupa de pesquida no canto superior esquerdo
     E digitar no campo de pesquisa o texto "ddxf"

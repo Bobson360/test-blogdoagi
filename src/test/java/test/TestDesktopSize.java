@@ -27,7 +27,7 @@ public class TestDesktopSize extends TestCase{
 				"C:\\driver\\chromedriver.exe");
 		
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://blogdoagi.com.br/");
 		driver.manage().window().maximize();
 		PageBase.driver = driver;	

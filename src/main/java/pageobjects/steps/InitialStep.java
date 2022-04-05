@@ -15,7 +15,7 @@ public class InitialStep {
 	
 	@Dado("clique na lupa de pesquida no canto superior esquerdo")
 	public void dado_clique_na_lupa_de_pesquida_no_canto_superior_esquerdo() throws InterruptedException {
-		initPage.btnOpenSearch.click();
+		initPage.btnToagleSearch();
 	}
 
 	@Entao("devo validar a exibicao do formulario")
@@ -63,9 +63,9 @@ public class InitialStep {
 		noResultsPage.pageValidation();
 	}
 
-	@Entao("o campo de pesquisa com o mesmo texto buscado")
-	public void entao_o_campo_de_pesquisa_com_o_mesmo_texto_buscado() {
-		noResultsPage.valueValidationSearchField();
+	@Entao("^o campo de pesquisa com o mesmo texto buscado \"([^\"]*)\"$")
+	public void entao_o_campo_de_pesquisa_com_o_mesmo_texto_buscado(String value) {
+		noResultsPage.valueValidationSearchField(value);
 	}
 
 	@E("^pesquisar pelo campo de pesquisa da tela sem resultados o texto \"([^\"]*)\"$")
@@ -75,6 +75,7 @@ public class InitialStep {
 
 	@Entao("^o valor na caixa de pesquisa deve ser covespondente a \"([^\"]*)\"$")
 	public void entao_o_valor_na_caixa_de_pesquisa_deve_ser_covespondente_a(String value) {
+		System.out.println("Validando texto");
 		initPage.searchFielValueValidation(value);
 	}
 }
