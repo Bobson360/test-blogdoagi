@@ -53,9 +53,10 @@ public class InitialPage extends PageBase {
 	}
 
 	public void searchFielValueValidation(String value) {
-		String text = searchField.getAttribute("value");
-		assertTrue("Nao foi possivel validar o valor da pesquisa: "
-				+ "Valor esperado: [" + value + ", Valor encontrado: " + text + "]", text.equals(value));
+		WebElement searchField1 = driver.findElement(By.xpath("//div[@class = 'desktop-search']//input[@name = 's']"));
+		String text = searchField1.getAttribute("value");
+		System.out.println(text);
+		assertTrue("Nao foi possivel validar o valor da pesquisa: Valor esperado: [" + value + ", Valor encontrado: " + text + "]", text.equals(value));
 	}
 
 	public void openSandwich() {
@@ -74,4 +75,6 @@ public class InitialPage extends PageBase {
 	public void btnToagleSearch() {
 		driver.findElement(By.xpath("//button[@id = 'search-open']")).click();
 	}
+	
+//	<input type="search" class="search-field" placeholder="Pesquisar …" value="ghtdk" name="s">
 }

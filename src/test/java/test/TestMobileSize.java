@@ -22,6 +22,8 @@ public class TestMobileSize {
 	
 	@BeforeClass
 	public static void before () {
+		
+		boolean b = isUnix();
 		System.setProperty("webdriver.chrome.driver", isUnix() ? 
 				"/Users/"+System.getProperty("user.name")+"/projects/driver/chromedriver": 
 				"C:\\driver\\chromedriver.exe");
